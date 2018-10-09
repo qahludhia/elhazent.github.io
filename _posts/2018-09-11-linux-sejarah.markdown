@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Perintah Dasar Linux Untuk Pemula
+title: Sejarah Dan Perkembangan Linux
 date: 2018-09-11 00:00:00 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: linux-basic.jpeg # Add image post (optional)
