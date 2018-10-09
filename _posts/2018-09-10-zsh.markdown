@@ -1,0 +1,198 @@
+---
+layout: post
+title: Mempercantik Terminal Bash Dengan Oh-My-Zsh
+date: 2018-09-10 00:00:00 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: oh-zsh.png # Add image post (optional)
+tags: [Js, Conference] # add tag
+---
+
+Jika Kalian adalah user linux maka Kalian tidak akan asing lagi dengan yang namanya terminal atau yang biasa disebut bash. Karena saya seorang programmer (pemula) maka bash di linux menjadi kebutuhan primer (bagi saya) untuk mengoperasikan suatu program, sepert yang paling dasar dari command line di linux adalah LS yang berfungsi untuk menampilkan isi directory. dan bagi saya penggunaan bash tidah hanya sampai disitu saja, saya menggunakan bash juga untuk mengoperasikan GIT untuk version control dari program yang saya kembangkan.
+
+![Unix]({{site.baseurl}}/assets/img/my-zsh.png)
+
+Bagaimana ? Lebih keren dari bash atau terminal versi standar kan ? dan satu lagi yang saya suka dari ZSH ada fitur tab sebagai autocomplete perintah atau folder yang ada. Nah pengen coba ? mari ikuti langkah berikut ini untuk instalasinya.
+
+Bagaimana menurut Kalian mengenai zsh dari gambar di atas? Lebih keren kan dari terminal atau bash versi default(bawaan)? dan satu lagi dari fitur zsh ini yang saya suka adalah ada fitur tab yaitu sebagai <i>autocomplete</i> perintah atau directory yang ada. Tertarikkan dengan fitur Oh-My-Zsh ini? Mari ikuti langkan berikut untuk melakukan installasi zsh.
+
+## Install ZSH
+
+1. Langkah pertama adalah install terlebih dahulu zsh melalui apt-get
+
+> $ sudo apt-get install zsh
+
+2. Lalu jadikan zsh sebagai default shell
+
+> $ chsh -s $(which zsh)
+
+3. Lakukanlah reboot (restart)
+
+> $ sudo reboot
+
+4. Setelah di Reboot, buka kembali terminal Kalian lalu ketikan command berikut
+
+> $ echo $SHELL
+
+Jika keluar /usr/bin/zsh berarti sudah berhasil mengubah ZSH menjadi default. lanjut ke langkah selanjutnya.
+
+## Install Oh-My-Zsh
+
+oh-my-zsh yang membuat tampilan terminal menjadi lebih keren. berikut langkah instalasinya.
+
+1. Install oh-my-zsh melalui curl
+
+> $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+<i>Jika ada pesan eror, mungkin kamu belum install curlnya. Silahkan install dengan perintah sudo apt-get install curl.</i>
+
+2. Jika sudah install melalui curl, sekarang atur plugin dan theme di file .zshrc
+
+> $ nano .zshrc
+
+kalau saya pakai tema agnoster, dan ubah temanya menjadi
+
+
+> ZSH_THEME="agnoster"
+
+3. Logout dan login kembali dari sistem dan buka kembali shellnya. Dan lihat hasilnya. Jika tampilannya masih kacau (tidak sesuai screenshot saya), berarti font nya belum terinstal. Silahkan install Powerline dengan cara.
+
+> $ sudo apt-get install powerline
+
+4. finish
+
+Informasi lebih lanjut mengenai zsh dan powerline bisa dicek disni :
+
+https://github.com/robbyrussell/oh-my-zsh
+https://github.com/powerline/fonts---
+layout: post
+title: Perintah Dasar Linux Beserta Fungsinya
+date: 2018-09-10 00:00:00 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: 92linux.jpg # Add image post (optional)
+tags: [Js, Conference] # add tag
+---
+Command line interface adalah sebuah antarmuka berbasis teks untuk menjalankan sistem melalui baris-baris perintah atau yang biasa disebut dengan command line.
+
+Sebagai User Linux, Kalian harus terbiasa dengan perintah command line. Command line interface akan memberikan Kalian akses yang lebih untuk melakukan perubahan pada sistem yang Kalian gunakan.
+
+Linux memberi pengguna hak akses penuh untuk melakukan kontrol kepada sistem yang yang Kalian gunakan. Kalian dapat dengan leluasa mengubah sistem sesuai dengan yang Kalian inginkan inginkan.
+
+Ada begitu banyak perintah-perintah yang ada pada Linux, namun sebelum menguasai perintah-perintah lebih lanjut, jika Kalian adalah seorang User yang baru saja menggunakan Linux, Kalian harus menguasai beberapa perintah-perintah dasar command line terlebih dahulu.
+
+Perintah-perintah command line ini adalah perintah-perintah yang akan sering kamu jumpai dan gunakan sebagai user Linux.
+
+Berikut perintah-perintah dasar yang ada pada Linux yang harus kamu kuasai sebagai seorang pengguna Linux.
+
+## PWD
+
+Perintah PWD ini berfungsi untuk melihat sedang ada di directory mana Kalian berada
+
+> $pwd
+
+
+## MAN
+
+Perintah man adalah perintah yang berfungsi untuk menampilkan halaman manual atau dokumentasi dari sebuah perintah. Dengan menggunakan perintah man kamu bisa melihat panduan atau fungsi dari sebuah perintah.
+
+> $man
+
+## LS
+
+Perintah LS adalah perintah yang berfungsi untuk menampilkan isi dari sebuah directory
+
+> $ ls
+
+## WHOAMI
+
+Perintah WHOAMI adalah perintah yang berfungsi untuk menampilkan nama user yang sedang Kalian gunakan
+
+> $ whoami
+
+## CD
+
+Perintah CD adalah perintah yang berasal dari kata change directory yang berfungsi untuk berpindah dari sebuah directory ke directory lain
+
+> $ cd (tujuan)
+
+## MKDIR
+Perintah mkdir berfungsi untuk membuat sebuah folder atau sebuah direktori baru menggunakan command line interface. Dengan menggunakan perintah makdir, kamu bukan hanya bisa membuat satu buah direktori baru, kamu juga bisa membuat sebuah struktur direktori baru dengan struktur tertentu.
+
+Dengan kata lain, kamu bisa membuat banyak folder hanya dengan menggunakan satu baris perintah di Linux dengan menggunakan perintah mkdir.
+
+> $ mkdir (nama directory)
+
+## TOUCH
+Perintah touch berfungsi untuk membuat sebuah file baru dengan menggunakan command line interface. Perintah ini bisa membuat file dengan ekstensi apa saja.
+
+> $ touch (nama file)
+
+## RM
+Perintah rm berfungsi untuk menghapus sebuah file dengan menggunakan command line interface. Dalam penggunaannya, dengan menggunakan parameter tertentu perintah rm juga digunakan untuk menghapus sebuah folder yang masih memiliki isi di dalamnya.
+
+> $ rm (nama file)
+
+## RMDIR
+Hampir mirip dengan perintah rm, perintah rmdir berfungsi untuk menghapus sebuah folder yang telah kosong.
+
+> $ rmdir (nama directory)
+
+## MV
+Perintah mv berfungsi untuk memindahkan sebuah file menggunakan command line. Dalam penggunaannya, kamu juga bisa menggunakan perintah ini untuk mengubah nama sebuah file.
+
+> $ mv
+
+## CP
+Perintah cp adalah perintah yang berfungsi untuk mengopi sebuah file dengan menggunakan command line interface.
+
+Tidak sama dengan perintah mv, perintah ini tidak akan menghapus file dasarnya, ia hanya menyalin isi dari sebuah file ke dalam sebuah file yang baru dengan nama yang berbeda.
+
+> $ cp
+
+## CAT
+Perintah cat berfungsi untuk menampilkan isi dari sebuah file dengan mencetaknya sebagai output dari perintah tersebut.
+
+> $ cat
+
+## KILL
+Perintah kill berfungsi untuk menghentikan sebuah proses yang sedang berjalan. Kamu dapat menghentikan sebuah proses dengan menggunakan perintah berdasarkan pid dari proses tersebut.
+
+> $ kill (nomor PID)
+
+## CHMOD
+Perintah chmod berfungsi untuk mengatur hak akses dari sebuah file di Linux. Kamu dapat mengatur hak akses dari sebuah file terhadap sebuah user atau group tertentu dengan memberi batasan hak akses rwx (read, write, execute). Dengan menggunakan chmod kamu juga menambah atau menghapus sebuah hak akses tanpa perlu menganggu hak akses lain yang sudah ada.
+
+> $ chmod +x (nama file)
+
+## SU
+su adalah singkatan dari superuser, perintah ini berfungsi untuk mengaktifkan sebuah user normal menjadi super user yang memiliki hak akses yang sama dengan user “root”.
+
+> $ sudo su
+
+## REBOOT
+Perintah reboot berfungsi untuk menghidupkan ulang atau melakukan restart sistem sebuah komputer yang sedang hidup atau sedang berjalan.
+
+> $ reboot
+
+## POWEROFF
+poweroff adalah perintah yang berfungsi mematikan sebuah sistem yang sedang berjalan secara penuh atau total.
+
+> $ poweroff
+
+## SHUTDOWN
+shutdown adalah perintah yang berfungsi untuk mematikan sebuah mesin Linux yang sedang berjalan. Dengan perintah shutdown kamu bisa melakukan penjadwalan pematian sebuah komputer.
+
+> $ shutdown
+
+> catatan : Perintah poweroff, shutdown, dan reboot memiliki fungsi yang hampir mirip, kamu bisa melihat Perbedaan  dan Penggunaan Perintah Poweroff, Shutdown, Halt dan Reboot disini.
+
+
+## CLEAR
+Perintah clear berfungsi untuk membersihkan layar Terminal atau command line interface dari perintah-perintah yang sudah dijalankan sebelumnya dan output-nya.
+
+> $ clear
+
+## HISTORY
+Perintah history berfungsi untuk menampilkan riwayat-riwayat perintah yang baru saja digunakan sebelumnya.
+
+
+> $ history
