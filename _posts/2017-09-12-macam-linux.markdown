@@ -3,7 +3,7 @@ layout: post
 title: Macam-Macam Sistem Operasi Linux Terpopuler Dan Banyak Dipakai
 date: 2018-10-20 00:00:00 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: git.png # Add image post (optional)
+img: linux.jpeg # Add image post (optional)
 tags: [Productivity, Software] # add tag
 ---
 
