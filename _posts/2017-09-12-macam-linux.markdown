@@ -10,15 +10,6 @@ tags: [Productivity, Software] # add tag
 Mungkin ksebanyakan dari Kalian hanya tahu dan mengenal Windows sebagai sistem operasi perangkat komputer. Namun, ada sistem operasi lain yang tak kalah populer yaitu Linux. Bahkan sistem operasi ini lebih populer ketimbang Windows bagi kalangan programmer, administrator, pengelola server dan berbagai profesi IT lainnya karena lebih mendukung dan menjawab kebutuhan aktivitas mereka. Selain itu, juga tersedia macam-macam sistem operasi Linux yang masing-masing memiliki karakteristik dan fungsi penggunaan yang unik. Tetapi pada dasarnya memiliki dasar yang sama yaitu UNIX.
 
 Sistem operasi Linux berbeda dengan sistem operasi yang lain karena bersifat open source atau bisa disebut bebas dikembangkan oleh siapapun oleh sebab itu banyak sekali varian sistem operasi ini. Sebagian besar pengguna sistem operasi Linux berpendapat bahwa sistem operasi ini lebih mudah digunakan, lebih simpel, terstruktur, serta tahan terhadap virus dan malware karena sebagian besar virus dan malware berdasar pada program sistem operasi Windows. Berikut ini macam-macam sistem operasi Linux yang paling populer, diminati, dan digunakan penggunanya:
-
-Home  »  Sistem Operasi   »   Macam-Macam Sistem Operasi Linux Terpopuler dan Banyak Dipakai
-Macam-Macam Sistem Operasi Linux Terpopuler dan Banyak Dipakai
-haniif September 24, 2016 No Comments
-Mungkin kebanyakan dari Anda hanya tahu dan mengenal Windows sebagai sistem operasi perangkat komputer. Namun, ada sistem operasi lain yang tak kalah populer yaitu Linux. Bahkan sistem operasi ini lebih populer ketimbang Windows bagi kalangan programmer, administrator, pengelola server dan berbagai profesi IT lainnya karena lebih mendukung dan menjawab kebutuhan aktivitas mereka. Selain itu, juga tersedia macam-macam sistem operasi Linux yang masing-masing memiliki karakteristik dan fungsi penggunaan yang unik. Tetapi pada dasarnya memiliki dasar yang sama yaitu UNIX.
-
-Sistem operasi Linux berbeda dengan sistem operasi yang lain karena bersifat open source atau bisa disebut bebas dikembangkan oleh siapapun oleh sebab itu banyak sekali varian sistem operasi ini. Sebagian besar pengguna sistem operasi Linux berpendapat bahwa sistem operasi ini lebih mudah digunakan, lebih simpel, terstruktur, serta tahan terhadap virus dan malware karena sebagian besar virus dan malware berdasar pada program sistem operasi Windows. Berikut ini macam-macam sistem operasi Linux yang paling populer, diminati, dan digunakan penggunanya:
-
-
  
 1. Debian
 
