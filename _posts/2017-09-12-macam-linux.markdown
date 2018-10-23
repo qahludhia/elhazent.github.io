@@ -65,3 +65,5 @@ Jika Anda berada di negara-negara Eropa maka dapat Anda temui sistem operasi SUS
 Logo SlackwareSlackware adalah yang paling tua dibandingkan macam-macam sistem operasi Linux yang lain. Uniknya sistem operasi Linux satu ini masih dikelola dan dikembangkan sampai sekarang tepatnya oleh Slackware Linux Inc. yang dikepalai Patrick Volkerding yaitu sang pembuat sistem operasi ini. Jika Anda mencari jenis sistem operasi Linux yang stabil, memiliki struktur managerial simpel dan desain yang mudah maka Slackware dapat menjadi jawaban atas pertanyaan Anda.
 
 Kira-kira itulah ulasan mengenai macam-macam sistem operasi Linux. Semoga dapat menambah wawasan Anda.
+
+Sumber : https://www.haniif.com/macam-macam-sistem-operasi-linux/
