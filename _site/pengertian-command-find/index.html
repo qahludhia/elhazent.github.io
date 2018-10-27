@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Mempercantik Terminal Bash Dengan Oh-My-Zsh - elhazent.com</title>
+	<title>Penjelasan Command Find Linux - elhazent.com</title>
 
   <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
 
     <meta content="elhazent.com" property="og:site_name">
   
-    <meta content="Mempercantik Terminal Bash Dengan Oh-My-Zsh" property="og:title">
+    <meta content="Penjelasan Command Find Linux" property="og:title">
   
   
     <meta content="article" property="og:type">
@@ -17,23 +17,23 @@
     <meta content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes." property="og:description">
   
   
-    <meta content="http://localhost:4000/zsh/" property="og:url">
+    <meta content="http://localhost:4000/pengertian-command-find/" property="og:url">
   
   
-    <meta content="2018-09-10T04:00:00+07:00" property="article:published_time">
+    <meta content="2017-09-12T04:00:00+07:00" property="article:published_time">
     <meta content="http://localhost:4000/about/" property="article:author">
   
   
-    <meta content="http://localhost:4000/assets/img/oh-zsh.png" property="og:image">
+    <meta content="http://localhost:4000/assets/img/find.jpg" property="og:image">
   
   
     
   
   
     
-    <meta content="Js" property="article:tag">
+    <meta content="Productivity" property="article:tag">
     
-    <meta content="Conference" property="article:tag">
+    <meta content="Software" property="article:tag">
     
   
 
@@ -41,16 +41,16 @@
     <meta name="twitter:site" content="@">
     <meta name="twitter:creator" content="@">
   
-    <meta name="twitter:title" content="Mempercantik Terminal Bash Dengan Oh-My-Zsh">
+    <meta name="twitter:title" content="Penjelasan Command Find Linux">
   
   
-    <meta name="twitter:url" content="http://localhost:4000/zsh/">
+    <meta name="twitter:url" content="http://localhost:4000/pengertian-command-find/">
   
   
     <meta name="twitter:description" content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.">
   
   
-    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/oh-zsh.png">
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/find.jpg">
   
 
 	<meta name="description" content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.">
@@ -121,116 +121,55 @@
     
     <div class="page-cover-image">
       <figure>
-        <img class="page-image" src=/assets/img/oh-zsh.png alt="Mempercantik Terminal Bash Dengan Oh-My-Zsh">
+        <img class="page-image" src=/assets/img/find.jpg alt="Penjelasan Command Find Linux">
         
       </figure>
     </div> <!-- End Page Cover Image -->
     
     <div class="wrap-content">
       <header class="header-page">
-        <h1 class="page-title">Mempercantik Terminal Bash Dengan Oh-My-Zsh</h1>
-        <div class="page-date"><span>2018, Sep 10&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <h1 class="page-title">Penjelasan Command Find Linux</h1>
+        <div class="page-date"><span>2017, Sep 12&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
       </header>
-      <p>Jika Kalian adalah user linux maka Kalian tidak akan asing lagi dengan yang namanya terminal atau yang biasa disebut bash. Karena saya seorang programmer (pemula) maka bash di linux menjadi kebutuhan primer (bagi saya) untuk mengoperasikan suatu program, sepert yang paling dasar dari command line di linux adalah LS yang berfungsi untuk menampilkan isi directory. dan bagi saya penggunaan bash tidah hanya sampai disitu saja, saya menggunakan bash juga untuk mengoperasikan GIT untuk version control dari program yang saya kembangkan.</p>
+      <p>Pada Kali ini saya akan menjelaskan tentang command ‘find’,  Ketika kita sedang mengerejakan sesuatu di komputer kita, kadang kita lupa meletakkan directory atau file di dalam komputer kita, tetapi kita hanya mengingat namanya saja. Nah, Menggunakan command ‘find’ ini kita bisa menemukan directory atau file yang kita cari hanya dengan menuliskan nama atau type directory atau file tersebut.</p>
 
-<p><img src="/assets/img/my-zsh.png" alt="Unix" /></p>
+<p>Bagaiman cara menggunakannya?</p>
 
-<p>Bagaimana ? Lebih keren dari bash atau terminal versi standar kan ? dan satu lagi yang saya suka dari ZSH ada fitur tab sebagai autocomplete perintah atau folder yang ada. Nah pengen coba ? mari ikuti langkah berikut ini untuk instalasinya.</p>
+<p>Nah, Langsung saja kita ke contoh penggunaan command ‘find’. Misal disini saya punya file bernama example.txt yang berada di directory ‘latihan’ didalam directory Document.</p>
 
-<p>Bagaimana menurut Kalian mengenai zsh dari gambar di atas? Lebih keren kan dari terminal atau bash versi default(bawaan)? dan satu lagi dari fitur zsh ini yang saya suka adalah ada fitur tab yaitu sebagai <i>autocomplete</i> perintah atau directory yang ada. Tertarikkan dengan fitur Oh-My-Zsh ini? Mari ikuti langkan berikut untuk melakukan installasi zsh.</p>
+<p><img src="/assets/img/01.png" alt="Sosok Linus Torvalds, Pendiri Linux" /></p>
 
-<h2 id="install-zsh">Install ZSH</h2>
+<p>Terus suatu ketika saya ingin mencari file “example.txt” tersebut, tapi saya cuma ingat kalo ada di dalam Documents. Maka saya ketik</p>
 
-<ol>
-  <li>Langkah pertama adalah install terlebih dahulu zsh melalui apt-get</li>
-</ol>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find Document -name "example.txt"
+</code></pre></div></div>
 
-<blockquote>
-  <p>$ sudo apt-get install zsh</p>
-</blockquote>
+<p><img src="/assets/img/02.png" alt="Sosok Linus Torvalds, Pendiri Linux" /></p>
 
-<ol>
-  <li>Lalu jadikan zsh sebagai default shell</li>
-</ol>
+<p>Nah.. ketemu lah file tersebut berada. Jadi tulisan Documents sebelum ‘-name’ itu menunjukan tempat dimana kamu akan mencari, jika di kosongi (langsung ‘-name’) berarti dia akan mencari di current direktori(tempat sekarang kamu berada). Kalau saya ganti menjadi tempatnya menjadi Downloads maka tidak akan keluar hasil apa2, karna di Downloads tidak ada file itu.</p>
 
-<blockquote>
-  <p>$ chsh -s $(which zsh)</p>
-</blockquote>
+<p><img src="/assets/img/03.png" alt="Sosok Linus Torvalds, Pendiri Linux" /></p>
 
-<ol>
-  <li>Lakukanlah reboot (restart)</li>
-</ol>
+<p>Trus kalo bener2 lupa di mana tempat nyimpannya gimana?? ya.. tinggal mulai pencarian dari akar semua file “/”. Tapi untuk metode ini butuh hak akses root jadi harus di tambah command “sudo” sebelum command find</p>
 
-<blockquote>
-  <p>$ sudo reboot</p>
-</blockquote>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find / -name "example.txt"
+</code></pre></div></div>
 
-<ol>
-  <li>Setelah di Reboot, buka kembali terminal Kalian lalu ketikan command berikut</li>
-</ol>
+<p><img src="/assets/img/04.png" alt="Sosok Linus Torvalds, Pendiri Linux" /></p>
 
-<blockquote>
-  <p>$ echo $SHELL</p>
-</blockquote>
-
-<p>Jika keluar /usr/bin/zsh berarti sudah berhasil mengubah ZSH menjadi default. lanjut ke langkah selanjutnya.</p>
-
-<h2 id="install-oh-my-zsh">Install Oh-My-Zsh</h2>
-
-<p>oh-my-zsh yang membuat tampilan terminal menjadi lebih keren. berikut langkah instalasinya.</p>
-
-<ol>
-  <li>Install oh-my-zsh melalui curl</li>
-</ol>
-
-<blockquote>
-  <p>$ sh -c “$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)”</p>
-</blockquote>
-
-<p><i>Jika ada pesan eror, mungkin kamu belum install curlnya. Silahkan install dengan perintah sudo apt-get install curl.</i></p>
-
-<ol>
-  <li>Jika sudah install melalui curl, sekarang atur plugin dan theme di file .zshrc</li>
-</ol>
-
-<blockquote>
-  <p>$ nano .zshrc</p>
-</blockquote>
-
-<p>kalau saya pakai tema agnoster, dan ubah temanya menjadi</p>
-
-<blockquote>
-  <p>ZSH_THEME=”agnoster”</p>
-</blockquote>
-
-<ol>
-  <li>Logout dan login kembali dari sistem dan buka kembali shellnya. Dan lihat hasilnya. Jika tampilannya masih kacau (tidak sesuai screenshot saya), berarti font nya belum terinstal. Silahkan install Powerline dengan cara.</li>
-</ol>
-
-<blockquote>
-  <p>$ sudo apt-get install powerline</p>
-</blockquote>
-
-<ol>
-  <li>finish</li>
-</ol>
-
-<p>Informasi lebih lanjut mengenai zsh dan powerline bisa dicek disni :</p>
-
-<p>https://github.com/robbyrussell/oh-my-zsh
-https://github.com/powerline/fonts—</p>
+<p>Mungkin Pada pembahasan kali ini cukup sampai di sini dulu.. untuk penjelasan command-command terminal yang lainnya silahkan dicek di home.</p>
 
       <div class="page-footer">
         <div class="page-share">
-          <a href="https://twitter.com/intent/tweet?text=Mempercantik Terminal Bash Dengan Oh-My-Zsh&url=http://localhost:4000/zsh/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
-          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/zsh/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
-          <a href="https://plus.google.com/share?url=http://localhost:4000/zsh/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+          <a href="https://twitter.com/intent/tweet?text=Penjelasan Command Find Linux&url=http://localhost:4000/pengertian-command-find/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/pengertian-command-find/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/pengertian-command-find/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
         </div>
         <div class="page-tag">
           
-            <a href="/tags#Js" class="tag">&#35; Js</a>
+            <a href="/tags#Productivity" class="tag">&#35; Productivity</a>
           
-            <a href="/tags#Conference" class="tag">&#35; Conference</a>
+            <a href="/tags#Software" class="tag">&#35; Software</a>
           
         </div>
       </div>
