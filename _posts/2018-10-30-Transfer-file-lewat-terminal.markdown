@@ -48,7 +48,7 @@ Dengan keterangan :
 
 Ataua jika kita ingin menyamakan isi folder yang ada pada laptop/PC kita dengan laptop/PC tujuan atau mem back up foler yang kita punya ke laptop tujuan kita bisa menggunakan perintah di bawah ini :
 
-    $ rync (file yang ingin dikirim) user(tujuan)@ipadress(tujuan):(dir tujuan)
+    $ rsync (file yang ingin dikirim) user(tujuan)@ipadress(tujuan):(dir tujuan)
 
 >*Note* : Jika kita ingin mengirimkan sebuah directory maka kita tambahkan perintah -r sebelum file yang ingin di kirim
 
