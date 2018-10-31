@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Transfer File Atau Directory Lewat Terminal - elhazent.com</title>
+	<title>Mengenal Hardlink Dan Softlink Dalam Linux - elhazent.com</title>
 
   <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
 
     <meta content="elhazent.com" property="og:site_name">
   
-    <meta content="Transfer File Atau Directory Lewat Terminal" property="og:title">
+    <meta content="Mengenal Hardlink Dan Softlink Dalam Linux" property="og:title">
   
   
     <meta content="article" property="og:type">
@@ -17,14 +17,14 @@
     <meta content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes." property="og:description">
   
   
-    <meta content="http://localhost:4000/Transfer-file-lewat-terminal/" property="og:url">
+    <meta content="http://localhost:4000/hardlink-softlink/" property="og:url">
   
   
-    <meta content="2018-10-30T04:00:00+07:00" property="article:published_time">
+    <meta content="2018-10-31T04:00:00+07:00" property="article:published_time">
     <meta content="http://localhost:4000/about/" property="article:author">
   
   
-    <meta content="http://localhost:4000/assets/img/Rsync-Over-SSH-Non-standard-Port.png" property="og:image">
+    <meta content="http://localhost:4000/assets/img/unix-linux.jpg" property="og:image">
   
   
     
@@ -41,16 +41,16 @@
     <meta name="twitter:site" content="@">
     <meta name="twitter:creator" content="@">
   
-    <meta name="twitter:title" content="Transfer File Atau Directory Lewat Terminal">
+    <meta name="twitter:title" content="Mengenal Hardlink Dan Softlink Dalam Linux">
   
   
-    <meta name="twitter:url" content="http://localhost:4000/Transfer-file-lewat-terminal/">
+    <meta name="twitter:url" content="http://localhost:4000/hardlink-softlink/">
   
   
     <meta name="twitter:description" content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.">
   
   
-    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/Rsync-Over-SSH-Non-standard-Port.png">
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/unix-linux.jpg">
   
 
 	<meta name="description" content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.">
@@ -121,77 +121,99 @@
     
     <div class="page-cover-image">
       <figure>
-        <img class="page-image" src=/assets/img/Rsync-Over-SSH-Non-standard-Port.png alt="Transfer File Atau Directory Lewat Terminal">
+        <img class="page-image" src=/assets/img/unix-linux.jpg alt="Mengenal Hardlink Dan Softlink Dalam Linux">
         
       </figure>
     </div> <!-- End Page Cover Image -->
     
     <div class="wrap-content">
       <header class="header-page">
-        <h1 class="page-title">Transfer File Atau Directory Lewat Terminal</h1>
-        <div class="page-date"><span>2018, Oct 30&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <h1 class="page-title">Mengenal Hardlink Dan Softlink Dalam Linux</h1>
+        <div class="page-date"><span>2018, Oct 31&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
       </header>
-      <p>System operasi linux sudah memprovide sebuah program yang bernama terminal atau juga sering di sebut dengan bash, Terminal atau bash banyak sekali fungsinya. Salah satunya yaitu untuk mengirim atau mengsinkronkan file dan directory pada satu lokasi atau server ke lokasi lain. Untuk GUI mungkin kita bisa menggunakan FileZilla. Tapi pada kali ini kita akan mensinkronkan file atau directory dengan terminal atau bash.</p>
+      <p>Hardlink dan softlink yang biasa disebut dengan shortcut (jalan pintas yang digunakan untuk menjalankan suatu perintah pada komputer.)</p>
 
-<p><strong>Mengubah Kepemilikan File Atau Directory</strong></p>
+<p><strong>Perbedaan Hardlink dan Softlink</strong></p>
 
-<p>Pertama yang harus kita lakukan untuk mensinkronkan file atau directory adalah Mengubah Ownership atau kepemilikan file atau directory tersebut dari root ke nama user komputer kita agar kita bisa menjalankan data tersebut.</p>
+<ul>
+  <li>Hardlink  : jika file utama dihapus maka file yang dilink tetap jalan.</li>
+  <li>Softlink  : jika file utama dihapus maka file yang dilink tidak bisa berjalan.</li>
+</ul>
 
-<p>Berikut perintah untuk mengubah ownership atau kepemilikan file atau directory :</p>
+<p><strong>Cara Menggunakan Hardlink Dan Softlink</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ chown -R (nama user : nama user) (nama file / directory)
+<ul>
+  <li>
+    <p>Hardlink</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ln  fileasal filelink
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Softlink</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ln -s fileasal filelink
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Contoh :</p>
+<ul>
+  <li>
+    <p>Hardlink :</p>
+
+    <p>$ ln latihan/script.sh file</p>
+  </li>
+  <li>
+    <p>Softlink :</p>
+
+    <p>$ ln -s latihan/script.sh file</p>
+  </li>
+</ul>
+
+<p>untuk menampilkan file dengan inode atau i-number atau inode-number (inode).</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -ali
 </code></pre></div></div>
 
-<p>Sebagai Contoh, Didalam dir /opt/ saya punya dir yang bernama ‘myapi’</p>
+<p>hardlink mempunyai kesamaan inode sedangkan softlink tidak :</p>
 
-<p><img src="/assets/img/ft-01.png" alt="Macbook" /></p>
+<p><img src="/assets/img/symbolic.png" alt="Macbook" /></p>
 
-<p>Dir ‘myapi’ tersbut masih menggunakan sebagai root, saya akan mengubah dari root ke nama user saya dengan mengetikkan perintah berikut :</p>
+<p>symbolic link yang sudah dihapus file sumbernya</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo chown -R mee:mee myapi
+<p><img src="/assets/img/symbolic_h.png" alt="Macbook" /></p>
+
+<p>hardlink mempunyai kesamaan inode sedangkan softlink tidak</p>
+
+<p><strong>Cara Menghapus Link</strong></p>
+
+<p>Untuk menghapus link ada dua cara :</p>
+
+<p><strong>1. Menggunakan unlink</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ unlink (namalink)
 </code></pre></div></div>
 
-<p>Maka berubahlah kepemilikan dir tersebut dari root ke user saya.</p>
+<p><strong>2. Menggunakan rm</strong></p>
 
-<p><img src="/assets/img/ft-02.png" alt="Macbook" /></p>
-
-<blockquote>
-  <p><em>NOTE</em> : -R tersebut untuk directory</p>
-</blockquote>
-
-<p>Kemudian setelah kita mengubah ownership maka kita siapkan file atau directory yang ingin kita sinkron atau kita kirim. Di sini saya akan mengirim file yang bernama “script.conf” ke komputer teman saya.</p>
-
-<p><img src="/assets/img/ft-03.png" alt="Macbook" /></p>
-
-<p>Untuk mensinkronkan atau mengirimkan file tersebut kita ketik perintah :</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ scp script.conf dhia@192.168.100.20:/opt/myapi/scipt.conf
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rm (namalink)
 </code></pre></div></div>
 
-<p>Dengan keterangan :</p>
+<p>Sekian Pembahasan tentang link dari saya, bagi para pembaca jika ingin menambahkan boleh komentar dibawah.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ scp (file yang ingin di kirim) user@ipadress:(dir tujuan)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Referensi :
+* https://linuxacademy.com/cp/courses/lesson/course/1748/lesson/9/module/173
+* https://averoes12.com/hard-link-soft-link/
+* https://ambilgratis.com/2013/05/08/mengenal-hardlinks-dan-softlinks-dalam-linux/
 </code></pre></div></div>
-
-<p><img src="/assets/img/ft-04.png" alt="Macbook" /></p>
-
-<p>Ataua jika kita ingin menyamakan isi folder yang ada pada laptop/PC kita dengan laptop/PC tujuan atau mem back up foler yang kita punya ke laptop tujuan kita bisa menggunakan perintah di bawah ini :</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rsync (file yang ingin dikirim) user(tujuan)@ipadress(tujuan):(dir tujuan)
-</code></pre></div></div>
-
-<blockquote>
-  <p><em>Note</em> : Jika kita ingin mengirimkan sebuah directory maka kita tambahkan perintah -r sebelum file yang ingin di kirim</p>
-</blockquote>
-
-<p>maka folder yang ada di laptop/pc tujuan akan sama dengan yang ada pada pc /laptop kita termasuk permission nya juga.</p>
 
 
       <div class="page-footer">
         <div class="page-share">
-          <a href="https://twitter.com/intent/tweet?text=Transfer File Atau Directory Lewat Terminal&url=http://localhost:4000/Transfer-file-lewat-terminal/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
-          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/Transfer-file-lewat-terminal/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
-          <a href="https://plus.google.com/share?url=http://localhost:4000/Transfer-file-lewat-terminal/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+          <a href="https://twitter.com/intent/tweet?text=Mengenal Hardlink Dan Softlink Dalam Linux&url=http://localhost:4000/hardlink-softlink/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/hardlink-softlink/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/hardlink-softlink/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
         </div>
         <div class="page-tag">
           
