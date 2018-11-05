@@ -24,7 +24,7 @@
     <meta content="http://localhost:4000/about/" property="article:author">
   
   
-    <meta content="http://localhost:4000/assets/img/fd-03.png" property="og:image">
+    <meta content="http://localhost:4000/assets/img/fd-bg.png" property="og:image">
   
   
     
@@ -50,7 +50,7 @@
     <meta name="twitter:description" content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.">
   
   
-    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/fd-03.png">
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/fd-bg.png">
   
 
 	<meta name="description" content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.">
@@ -121,7 +121,7 @@
     
     <div class="page-cover-image">
       <figure>
-        <img class="page-image" src=/assets/img/fd-03.png alt="Mencari Dan Menghapus File Duplicate Di Linux">
+        <img class="page-image" src=/assets/img/fd-bg.png alt="Mencari Dan Menghapus File Duplicate Di Linux">
         
       </figure>
     </div> <!-- End Page Cover Image -->
@@ -205,7 +205,7 @@
 
 <h3 id="fdupes---mencari-file-duplikat-di-linux">Fdupes - Mencari File Duplikat di Linux</h3>
 
-<p>Fdupes adalah program lain yang memungkinkan Anda mengidentifikasi file duplikat di sistem Anda. Ini gratis dan open source dan ditulis dalam C. Menggunakan metode berikut untuk menentukan file duplikat:</p>
+<p>Fdupes adalah program lain yang memungkinkan Anda mengidentifikasi file duplikat di sistem kita. Ini gratis dan open source dan ditulis dalam C. Menggunakan metode berikut untuk menentukan file duplikat:</p>
 
 <ul>
   <li>Membandingkan tanda tangan md5sum parsial</li>
@@ -215,22 +215,25 @@
 
 <p>Sama seperti rdfind itu memiliki opsi serupa:</p>
 
-<p>Cari secara rekursif
-Kecualikan file kosong
-Menunjukkan ukuran file duplikat
-Hapus duplikat segera
-Kecualikan file dengan pemilik yang berbeda
-Fdupes sintaks mirip dengan rdfind. Cukup ketikkan perintah yang diikuti oleh direktori yang ingin Anda pindai.</p>
+<ul>
+  <li>Cari secara rekursif</li>
+  <li>Kecualikan file kosong</li>
+  <li>Menunjukkan ukuran file duplikat</li>
+  <li>Hapus duplikat segera</li>
+  <li>Kecualikan file dengan pemilik yang berbeda</li>
+  <li>
+    <p>Fdupes sintaks mirip dengan rdfind. Cukup ketikkan perintah yang diikuti oleh direktori yang ingin Anda pindai.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ fdupes &lt;dir&gt;
-</code></pre></div></div>
+    <p>$ fdupes <dir></dir></p>
+  </li>
+</ul>
 
-<p>Untuk mencari file secara rekursif, Anda harus menentukan opsi -r seperti ini.</p>
+<p>Untuk mencari file secara rekursif, Kita harus menentukan opsi -r seperti ini.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ fdupes -r &lt;dir&gt;
 </code></pre></div></div>
 
-<p>Anda juga dapat menentukan banyak direktori dan menentukan direktori yang akan dicari secara rekursif.</p>
+<p>Kita juga dapat menentukan banyak direktori dan menentukan direktori yang akan dicari secara rekursif.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ fdupes &lt;dir1&gt; -r &lt;dir2&gt;
 </code></pre></div></div>
@@ -247,12 +250,12 @@ Fdupes sintaks mirip dengan rdfind. Cukup ketikkan perintah yang diikuti oleh di
 
 <p><img src="/assets/img/fd-02.png" alt="Macbook" /></p>
 
-<p>Akhirnya jika Anda ingin menghapus semua duplikat, gunakan opsi -d seperti ini.</p>
+<p>Akhirnya jika Kita ingin menghapus semua duplikat, gunakan opsi -d seperti ini.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ fdupes -d &lt;dir&gt;
 </code></pre></div></div>
 
-<p>Fdupes akan menanyakan file mana yang ingin dihapus. Anda harus memasukkan nomor file:</p>
+<p>Fdupes akan menanyakan file mana yang ingin dihapus. Kita harus memasukkan nomor file:</p>
 
 <p><img src="/assets/img/fd-03.png" alt="Macbook" /></p>
 
@@ -275,7 +278,7 @@ Rdfind dan fdupes adalah alat yang sangat berguna untuk menemukan file duplikat 
   <p>Jika Anda tidak yakin jika Anda memerlukan file atau tidak, akan lebih baik untuk membuat cadangan file itu dan mengingat direktori sebelum menghapusnya. Jika Anda memiliki pertanyaan atau komentar, harap kirimkan di bagian komentar di bawah ini.</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Referensi : https://www.tecmint.com/find-and-delete-duplicate-files-in-linux/?fbclid=IwAR270egpMXByy5BxSwsZ0QuwmREGKJnuceeQtRzQlkhEMTVJrkGdfGdkCjM
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Referensi : https://www.tecmint.com/find-and-delete-duplicate-files-in-linux/
 </code></pre></div></div>
 
       <div class="page-footer">

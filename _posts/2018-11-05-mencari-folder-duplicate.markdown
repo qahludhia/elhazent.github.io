@@ -3,7 +3,7 @@ layout: post
 title: Mencari Dan Menghapus File Duplicate Di Linux
 date: 2018-11-05 00:00:00 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: fd-03.png # Add image post (optional)
+img: fd-bg.png # Add image post (optional)
 tags: [Productivity, Software] # add tag
 ---
 
@@ -61,7 +61,7 @@ Untuk memeriksa opsi berguna lainnya dari rdfind, Anda dapat menggunakan manual 
 
 ### Fdupes - Mencari File Duplikat di Linux
 
-Fdupes adalah program lain yang memungkinkan Anda mengidentifikasi file duplikat di sistem Anda. Ini gratis dan open source dan ditulis dalam C. Menggunakan metode berikut untuk menentukan file duplikat:
+Fdupes adalah program lain yang memungkinkan Anda mengidentifikasi file duplikat di sistem kita. Ini gratis dan open source dan ditulis dalam C. Menggunakan metode berikut untuk menentukan file duplikat:
 
 * Membandingkan tanda tangan md5sum parsial
 * Membandingkan tanda tangan md5sum penuh
@@ -69,20 +69,20 @@ Fdupes adalah program lain yang memungkinkan Anda mengidentifikasi file duplikat
 
 Sama seperti rdfind itu memiliki opsi serupa:
 
-Cari secara rekursif
-Kecualikan file kosong
-Menunjukkan ukuran file duplikat
-Hapus duplikat segera
-Kecualikan file dengan pemilik yang berbeda
-Fdupes sintaks mirip dengan rdfind. Cukup ketikkan perintah yang diikuti oleh direktori yang ingin Anda pindai.
+* Cari secara rekursif
+* Kecualikan file kosong
+* Menunjukkan ukuran file duplikat
+* Hapus duplikat segera
+* Kecualikan file dengan pemilik yang berbeda
+* Fdupes sintaks mirip dengan rdfind. Cukup ketikkan perintah yang diikuti oleh direktori yang ingin Anda pindai.
 
     $ fdupes <dir>
 
-Untuk mencari file secara rekursif, Anda harus menentukan opsi -r seperti ini.
+Untuk mencari file secara rekursif, Kita harus menentukan opsi -r seperti ini.
 
     $ fdupes -r <dir>
 
-Anda juga dapat menentukan banyak direktori dan menentukan direktori yang akan dicari secara rekursif.
+Kita juga dapat menentukan banyak direktori dan menentukan direktori yang akan dicari secara rekursif.
 
     $ fdupes <dir1> -r <dir2>
 
@@ -96,11 +96,11 @@ Untuk mengumpulkan informasi ringkasan tentang file yang ditemukan menggunakan o
 
 ![Macbook]({{site.baseurl}}/assets/img/fd-02.png)
 
-Akhirnya jika Anda ingin menghapus semua duplikat, gunakan opsi -d seperti ini.
+Akhirnya jika Kita ingin menghapus semua duplikat, gunakan opsi -d seperti ini.
 
     $ fdupes -d <dir>
 
-Fdupes akan menanyakan file mana yang ingin dihapus. Anda harus memasukkan nomor file:
+Fdupes akan menanyakan file mana yang ingin dihapus. Kita harus memasukkan nomor file:
 
 ![Macbook]({{site.baseurl}}/assets/img/fd-03.png)
 
@@ -118,4 +118,4 @@ Rdfind dan fdupes adalah alat yang sangat berguna untuk menemukan file duplikat 
 
 >Jika Anda tidak yakin jika Anda memerlukan file atau tidak, akan lebih baik untuk membuat cadangan file itu dan mengingat direktori sebelum menghapusnya. Jika Anda memiliki pertanyaan atau komentar, harap kirimkan di bagian komentar di bawah ini.
 
-    Referensi : https://www.tecmint.com/find-and-delete-duplicate-files-in-linux/?fbclid=IwAR270egpMXByy5BxSwsZ0QuwmREGKJnuceeQtRzQlkhEMTVJrkGdfGdkCjM
+    Referensi : https://www.tecmint.com/find-and-delete-duplicate-files-in-linux/
