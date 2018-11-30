@@ -102,3 +102,7 @@ Buka browser web Anda, lalu masukkan alamat server Anda: `http://localhost` untu
 ![Macbook]({{site.baseurl}}/assets/img/wp-2.png)
 
 Jika semuanya berjalan baik-baik saja, Anda sekarang dapat menikmati WordPress di sistem Anda. Namun, untuk mengungkapkan kekhawatiran atau mengajukan pertanyaan terkait langkah-langkah di atas atau bahkan memberikan informasi tambahan yang menurut Anda belum dimasukkan dalam tutorial ini, Anda dapat menggunakan bagian umpan balik di bawah ini untuk menghubungi kami kembali.
+
+> Referensi :
+> - https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/
+> - https://dhiaulhaq.com/2018/11/28/wordpress/
