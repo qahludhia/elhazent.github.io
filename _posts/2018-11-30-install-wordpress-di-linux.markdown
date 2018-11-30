@@ -23,7 +23,7 @@ Salah satu hal terbaik WordPress adalah CMS ini memiliki software antarmuka yang
 
 Selain itu, WordPress bersifat open-source dan bisa digunakan oleh siapa pun. Bahkan CMS WordPess memungkinkan jutaan orang di dunia untuk membuat website modern berkualitas tinggi – meski Anda masih pemula sekalipun.
 
-### Instalasi Wordpress di Linux
+### Installasi Wordpress di Linux
 
 - **Step 1 : Install Apache2**
 

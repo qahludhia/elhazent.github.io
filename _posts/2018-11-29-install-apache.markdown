@@ -7,7 +7,7 @@ img: aws-bg.jpeg # Add image post (optional)
 tags: [Productivity, Software] # add tag
 ---
 
-### Pengaertian
+### Pengertian
 
 Apache adalah software web server yang gratis dan bersifat open source. Server ini telah menjadi platform bagi 46% website di seluruh dunia. Nama resminya adalah Apache HTTP Server, dan software ini dikelola dan dikembangkan oleh Apache Software Foundation.
 
@@ -17,7 +17,7 @@ Ketika seseorang hendak mengakses suatu website, ia harus memasukkan nama domain
 
 Di Hostinger, infrastruktur web hosting kami mengunakan Apache yang sejajar dengan NGINX, yang juga merupakan software web server yang banyak digunakan. Pengaturan khusus ini memudahkan kami untuk memaksimalkan baik server maupun web hosting. Pengaturan tersebut juga menaikkan performa server dengan menyeimbangkan kelemahan salah satu server dan kelebihan server lainnya.
 
-### Instalasi Apache Web Server
+### Installasi Apache Web Server
 
 Untuk menginstall Apache web server, ketikan perintah berikut di terminal :
 
