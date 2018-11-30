@@ -30,3 +30,7 @@ Penyebaran server basis data belum aman, karena alasan ini, berikan perintah ber
 Pertama, Anda akan diminta untuk menginstal plugin **'validate_password'**, jadi ketik `Y/Yes` dan tekan **Enter**, dan juga pilih tingkat kekuatan kata sandi default. Di sistem saya, saya sudah menginstalnya.
 
 Yang penting, jika Anda tidak ingin mengubah kata sandi root, maka ketik `N/No` ketika diminta untuk melakukannya. Jawab `Y/Ya` untuk pertanyaan selanjutnya.
+
+> Referensi :
+> - http://edel.staff.unja.ac.id/blog/artikel/Pengertian-MySQL.html
+> - https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/
