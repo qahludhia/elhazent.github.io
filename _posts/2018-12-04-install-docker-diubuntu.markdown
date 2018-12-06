@@ -168,8 +168,6 @@ Mesin akan menelusuri Docker Hub dan menampilkan daftar semua image yang namanya
     ossobv/ubuntu
     ...
 
-
-225/5000
 Di kolom RESMI, OK menunjukkan image yang dibuat dan didukung oleh perusahaan di belakang proyek. Setelah Anda mengidentifikasi image yang ingin Anda gunakan, Anda dapat mengunduhnya ke komputer Anda menggunakan perintah `pull`.
 
 Jalankan perintah berikut untuk mengunduh image `ubuntu` resmi ke komputer Anda:
@@ -226,20 +224,7 @@ Sekarang Anda dapat menjalankan perintah apa pun di dalam penampung. Sebagai con
 
     root@d9b100f2f636:/# apt update
 
-Kemudian instal aplikasi apa saja di dalamnya. Mari instal Node.js:
-
-    root@d9b100f2f636:/# apt install nodejs
-
-Instalasi Node.js dalam kontainer dari repositori resmi Ubuntu. Ketika instalasi selesai, verifikasi bahwa Node.js diinstal:
-
-    root@d9b100f2f636:/# node -v
-
-Anda akan melihat nomor versi yang ditampilkan di terminal Anda:
-
-    Output
-    v8.10.0
-
-Perubahan apa pun yang Anda buat di dalam penampung hanya berlaku untuk penampung itu.
+Untuk keluar dari shell docker ketikan `exit`.
 
 Untuk keluar dari wadah, ketik `exit` pada prompt.
 
@@ -300,15 +285,15 @@ Ketika Anda memulai image Docker, Anda dapat membuat, memodifikasi, dan menghapu
 
 Bagian ini menunjukkan cara menyimpan status penampung sebagai image Docker baru.
 
-Setelah menginstal `Node.js` di dalam kontainer Ubuntu, Anda sekarang memiliki kontainer yang menjalankan image, tetapi Kontainer berbeda dari image yang Anda gunakan untuk membuatnya. Tetapi Anda mungkin ingin menggunakan kembali kontainer Node.js ini sebagai dasar untuk image baru nanti.
+Setelah menginstal `wordpress` di dalam kontainer Ubuntu, Anda sekarang memiliki kontainer yang menjalankan image, tetapi Kontainer berbeda dari image yang Anda gunakan untuk membuatnya. Tetapi Anda mungkin ingin menggunakan kembali kontainer Node.js ini sebagai dasar untuk image baru nanti.
 
     $ docker commit -m "What you did to the image" -a "Author Name" container_id repository/new_image_name
 
 Perintah `-m` adalah untuk pesan commit yang membantu Anda dan orang lain mengetahui perubahan apa yang Anda buat, sementara `-a` digunakan untuk menentukan pembuatnya. `Container_id` adalah judul yang Anda catat sebelumnya di tutorial ketika Anda memulai sesi Docker interaktif. Kecuali Anda membuat repositori tambahan di Docker Hub, repositori biasanya adalah nama pengguna Docker Hub Anda.
 
-Misalnya, untuk pengguna `sammy`, dengan ID kontainer `d9b100f2f636`, perintahnya adalah:
+Misalnya, untuk pengguna `elhazent`, dengan ID kontainer `d9b100f2f636`, perintahnya adalah:
 
-    $ docker commit -m "added Node.js" -a "sammy" d9b100f2f636 sammy/ubuntu-nodejs
+    $ docker commit -m "added wordpress_full" -a "sammy" d9b100f2f636 elhazent/wordpress_full
 
 Saat Anda mengkomit image, image baru disimpan secara lokal di komputer Anda. Kemudian dalam tutorial ini, Anda akan belajar cara push image ke registri Docker seperti Docker Hub sehingga orang lain dapat mengaksesnya.
 
@@ -320,11 +305,11 @@ Anda akan melihat output sebagai berikut:
 
     Output
     REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
-    sammy/ubuntu-nodejs   latest              7c1f35226ca6        7 seconds ago       179MB
+    elhazent/wordpress_full   latest              7c1f35226ca6        7 seconds ago       179MB
     ubuntu                   latest              113a43faa138        4 weeks ago         81.2MB
     hello-world              latest              e38bc07ac18e        2 months ago        1.85kB
 
-Dalam contoh ini, `ubuntu-nodejs` adalah image baru, yang berasal dari image `ubuntu` yang ada dari Docker Hub. Perbedaan ukuran mencerminkan perubahan yang dibuat. Dan dalam contoh ini, perubahannya adalah NodeJS dipasang. Jadi, kali berikutnya Anda perlu menjalankan kontainer menggunakan Ubuntu dengan NodeJS yang sudah terpasang sebelumnya, Anda cukup menggunakan image baru.
+Dalam contoh ini, `wordpress_full` adalah image baru, yang berasal dari image `ubuntu` yang ada dari Docker Hub. Perbedaan ukuran mencerminkan perubahan yang dibuat. Dan dalam contoh ini, perubahannya adalah NodeJS dipasang. Jadi, kali berikutnya Anda perlu menjalankan kontainer menggunakan Ubuntu dengan NodeJS yang sudah terpasang sebelumnya, Anda cukup menggunakan image baru.
 
 Anda juga dapat membuat image dari Dockerfile, yang memungkinkan Anda mengotomatiskan penginstalan perangkat lunak dalam image baru. Namun, itu di luar lingkup tutorial ini.
 
@@ -343,21 +328,22 @@ Untuk pushing image Anda, pertama-tama masuk ke Docker Hub.
 Anda akan diminta untuk mengotentikasi menggunakan kata sandi Docker Hub Anda. Jika Anda menentukan kata sandi yang benar, otentikasi harus berhasil.
 
 > **Catatan**: Jika nama pengguna registri Docker Anda berbeda dari nama pengguna lokal yang Anda gunakan untuk membuat image, Anda harus menandai image Anda dengan nama pengguna registri Anda. Untuk contoh yang diberikan di langkah terakhir, Anda akan mengetik:
-    $ docker tag sammy/ubuntu-nodejs docker-registry-username/ubuntu-nodejs
+   
+    $ docker tag elhazent/wordpress-full docker-registry-username/ubuntu-nodejs
 >
 
 Kemudian Anda dapat pushing image Anda sendiri menggunakan:
 
     $ docker push docker-registry-username/docker-image-name
 
-Untuk pushing image `ubuntu-nodejs` ke repositori `sammy`, perintahnya adalah:
+Untuk pushing image `ubuntu-nodejs` ke repositori `elhazent`, perintahnya adalah:
 
-    $ docker push sammy/ubuntu-nodejs
+    $ docker push elhazent/ubuntu-nodejs
 
 Proses ini mungkin memerlukan waktu beberapa saat untuk mengunggah image, tetapi ketika selesai, hasilnya akan terlihat seperti ini:
 
     Output
-    The push refers to a repository [docker.io/sammy/ubuntu-nodejs]
+    The push refers to a repository [docker.io/elhazent/wordpress_full]
     e3fbbfb44187: Pushed
     5f70bf18a086: Pushed
     a3b5c80a4eba: Pushed
