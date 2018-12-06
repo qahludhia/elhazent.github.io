@@ -109,7 +109,7 @@ Jika Anda perlu menambahkan pengguna ke grup docker yang tidak Anda masuki, nyat
 
     $ sudo usermod -aG docker username
 
-Bagian lain dari artikel ini mengasumsikan Anda menjalankan perintah `**docker**` sebagai pengguna dalam grup docker. Jika Anda memilih untuk tidak, silakan tambahkan perintah dengan `**sudo**`.
+Bagian lain dari artikel ini mengasumsikan Anda menjalankan perintah `docker` sebagai pengguna dalam grup docker. Jika Anda memilih untuk tidak, silakan tambahkan perintah dengan `sudo`.
 
 **Step 3: Bekerja Dengan Docker Image**
 
@@ -190,7 +190,7 @@ anda akan melihat output sebagai berikut :
     Status: Downloaded newer image for ubuntu:latest
 
 
-Setelah image diunduh, Anda dapat menjalankan penampung menggunakan image yang diunduh dengan perintah `**run**`. Seperti yang Anda lihat dengan contoh `hello-world`, jika image belum diunduh ketika docker dieksekusi dengan perintah `**run**`, Docker client akan terlebih dahulu mengunduh image, lalu menjalankan penampung yang menggunakannya.
+Setelah image diunduh, Anda dapat menjalankan penampung menggunakan image yang diunduh dengan perintah `run`. Seperti yang Anda lihat dengan contoh `hello-world`, jika image belum diunduh ketika docker dieksekusi dengan perintah `run`, Docker client akan terlebih dahulu mengunduh image, lalu menjalankan penampung yang menggunakannya.
 
 Untuk melihat image yang telah diunduh ke komputer Anda, ketik:
 
@@ -220,7 +220,7 @@ Shell perintah Anda akan berubah untuk mencerminkan fakta bahwa Anda sekarang be
     Output
     root@d9b100f2f636:/#
 
-Perhatikan id kontainer di command shell. Dalam contoh ini, ini adalah `**d9b100f2f636**`. Anda memerlukan ID penampung nanti untuk mengidentifikasi penampung saat Anda ingin membuangnya.
+Perhatikan id kontainer di command shell. Dalam contoh ini, ini adalah `d9b100f2f636`. Anda memerlukan ID penampung nanti untuk mengidentifikasi penampung saat Anda ingin membuangnya.
 
 Sekarang Anda dapat menjalankan perintah apa pun di dalam penampung. Sebagai contoh, mari kita perbarui paket database di dalam kontainer. Anda tidak perlu awalan perintah apa pun dengan `sudo`, karena Anda beroperasi di dalam penampung sebagai pengguna `root`:
 
@@ -241,7 +241,7 @@ Anda akan melihat nomor versi yang ditampilkan di terminal Anda:
 
 Perubahan apa pun yang Anda buat di dalam penampung hanya berlaku untuk penampung itu.
 
-Untuk keluar dari wadah, ketik `**exit**` pada prompt.
+Untuk keluar dari wadah, ketik `exit` pada prompt.
 
 **Step 5: Mengelola Kontainer Docker**
 
@@ -273,40 +273,40 @@ Untuk melihat penampung terbaru yang Anda buat, berikan saja perintah `-l`:
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
     d9b100f2f636        ubuntu              "/bin/bash"         About an hour ago   Exited (0) 10 minutes ago                       sharp_volhard
 
-Untuk memulai kontainer yang berhenti, gunakan perintah `**docker start**`, diikuti oleh ID kontainer atau nama kontainer. Mari kita mulai kontainer berbasis Ubuntu dengan ID `**d9b100f2f636**`:
+Untuk memulai kontainer yang berhenti, gunakan perintah `docker start`, diikuti oleh ID kontainer atau nama kontainer. Mari kita mulai kontainer berbasis Ubuntu dengan ID `d9b100f2f636`:
 
     $ docker start d9b100f2f636
 
-Kontainer akan dimulai, dan Anda dapat menggunakan `**docker ps**` untuk melihat statusnya:
+Kontainer akan dimulai, dan Anda dapat menggunakan `docker ps` untuk melihat statusnya:
 
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     d9b100f2f636        ubuntu              "/bin/bash"         About an hour ago   Up 8 seconds                            sharp_volhard
 
-Untuk menghentikan kontainer yang berjalan, gunakan perintah `**docker stop**`, diikuti oleh ID atau nama kontainer. Kali ini, kami akan menggunakan nama yang diberikan Docker pada kontainer, yaitu `**sharp_volhard**`:
+Untuk menghentikan kontainer yang berjalan, gunakan perintah `docker stop`, diikuti oleh ID atau nama kontainer. Kali ini, kami akan menggunakan nama yang diberikan Docker pada kontainer, yaitu `sharp_volhard`:
 
     $ docker stop sharp_volhard
 
-Setelah Anda memutuskan Anda tidak lagi membutuhkan kontainer lagi, hapus dengan perintah `**docker rm**`, lagi-lagi menggunakan ID kontainer atau nama. Gunakan perintah `**docker ps -a**` untuk menemukan ID atau nama penampung untuk penampung yang terkait dengan image `**hello-world**` dan hapus.
+Setelah Anda memutuskan Anda tidak lagi membutuhkan kontainer lagi, hapus dengan perintah `docker rm`, lagi-lagi menggunakan ID kontainer atau nama. Gunakan perintah `docker ps -a` untuk menemukan ID atau nama penampung untuk penampung yang terkait dengan image `hello-world` dan hapus.
 
     $ docker rm festive_williams
 
-Anda dapat memulai kontainer baru dan memberinya nama menggunakan tombol `**--name**`. Anda juga dapat menggunakan tombol `**-rm**` untuk membuat penampung yang menghapus dirinya sendiri ketika dihentikan. Lihat perintah bantuan menjalankan docker untuk informasi lebih lanjut tentang opsi ini dan lainnya.
+Anda dapat memulai kontainer baru dan memberinya nama menggunakan tombol `--name`. Anda juga dapat menggunakan tombol `-rm` untuk membuat penampung yang menghapus dirinya sendiri ketika dihentikan. Lihat perintah bantuan menjalankan docker untuk informasi lebih lanjut tentang opsi ini dan lainnya.
 
 Kontainer dapat diubah menjadi image yang dapat Anda gunakan untuk membuat kontainer baru. Mari kita lihat cara kerjanya.
 
 **Step 6: Melakukan Perubahan Dalam Kontainer ke Image Docker**
 
-Ketika Anda memulai image Docker, Anda dapat membuat, memodifikasi, dan menghapus file seperti yang Anda bisa dengan mesin virtual. Perubahan yang Anda buat hanya akan berlaku untuk kontainer itu. Anda dapat memulai dan menghentikannya, tetapi setelah Anda menghancurkannya dengan perintah `**docker rm**`, perubahan akan hilang selamanya.
+Ketika Anda memulai image Docker, Anda dapat membuat, memodifikasi, dan menghapus file seperti yang Anda bisa dengan mesin virtual. Perubahan yang Anda buat hanya akan berlaku untuk kontainer itu. Anda dapat memulai dan menghentikannya, tetapi setelah Anda menghancurkannya dengan perintah `docker rm`, perubahan akan hilang selamanya.
 
 Bagian ini menunjukkan cara menyimpan status penampung sebagai image Docker baru.
 
-Setelah menginstal `**Node.js**` di dalam kontainer Ubuntu, Anda sekarang memiliki kontainer yang menjalankan image, tetapi Kontainer berbeda dari image yang Anda gunakan untuk membuatnya. Tetapi Anda mungkin ingin menggunakan kembali kontainer Node.js ini sebagai dasar untuk image baru nanti.
+Setelah menginstal `Node.js` di dalam kontainer Ubuntu, Anda sekarang memiliki kontainer yang menjalankan image, tetapi Kontainer berbeda dari image yang Anda gunakan untuk membuatnya. Tetapi Anda mungkin ingin menggunakan kembali kontainer Node.js ini sebagai dasar untuk image baru nanti.
 
     $ docker commit -m "What you did to the image" -a "Author Name" container_id repository/new_image_name
 
-Perintah `**-m**` adalah untuk pesan commit yang membantu Anda dan orang lain mengetahui perubahan apa yang Anda buat, sementara `**-a**` digunakan untuk menentukan pembuatnya. `**Container_id**` adalah judul yang Anda catat sebelumnya di tutorial ketika Anda memulai sesi Docker interaktif. Kecuali Anda membuat repositori tambahan di Docker Hub, repositori biasanya adalah nama pengguna Docker Hub Anda.
+Perintah `-m` adalah untuk pesan commit yang membantu Anda dan orang lain mengetahui perubahan apa yang Anda buat, sementara `-a` digunakan untuk menentukan pembuatnya. `Container_id` adalah judul yang Anda catat sebelumnya di tutorial ketika Anda memulai sesi Docker interaktif. Kecuali Anda membuat repositori tambahan di Docker Hub, repositori biasanya adalah nama pengguna Docker Hub Anda.
 
-Misalnya, untuk pengguna `**sammy**`, dengan ID kontainer `**d9b100f2f636**`, perintahnya adalah:
+Misalnya, untuk pengguna `sammy`, dengan ID kontainer `d9b100f2f636`, perintahnya adalah:
 
     $ docker commit -m "added Node.js" -a "sammy" d9b100f2f636 sammy/ubuntu-nodejs
 
@@ -324,7 +324,7 @@ Anda akan melihat output sebagai berikut:
     ubuntu                   latest              113a43faa138        4 weeks ago         81.2MB
     hello-world              latest              e38bc07ac18e        2 months ago        1.85kB
 
-Dalam contoh ini, `**ubuntu-nodejs**` adalah image baru, yang berasal dari image `**ubuntu**` yang ada dari Docker Hub. Perbedaan ukuran mencerminkan perubahan yang dibuat. Dan dalam contoh ini, perubahannya adalah NodeJS dipasang. Jadi, kali berikutnya Anda perlu menjalankan kontainer menggunakan Ubuntu dengan NodeJS yang sudah terpasang sebelumnya, Anda cukup menggunakan image baru.
+Dalam contoh ini, `ubuntu-nodejs` adalah image baru, yang berasal dari image `ubuntu` yang ada dari Docker Hub. Perbedaan ukuran mencerminkan perubahan yang dibuat. Dan dalam contoh ini, perubahannya adalah NodeJS dipasang. Jadi, kali berikutnya Anda perlu menjalankan kontainer menggunakan Ubuntu dengan NodeJS yang sudah terpasang sebelumnya, Anda cukup menggunakan image baru.
 
 Anda juga dapat membuat image dari Dockerfile, yang memungkinkan Anda mengotomatiskan penginstalan perangkat lunak dalam image baru. Namun, itu di luar lingkup tutorial ini.
 
@@ -350,7 +350,7 @@ Kemudian Anda dapat pushing image Anda sendiri menggunakan:
 
     $ docker push docker-registry-username/docker-image-name
 
-Untuk pushing image `**ubuntu-nodejs**` ke repositori `**sammy**`, perintahnya adalah:
+Untuk pushing image `ubuntu-nodejs` ke repositori `sammy`, perintahnya adalah:
 
     $ docker push sammy/ubuntu-nodejs
 
