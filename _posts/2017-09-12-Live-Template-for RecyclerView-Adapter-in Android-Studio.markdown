@@ -20,27 +20,27 @@ Berkat Live Templates, pengembangan Android lebih cepat dari sebelumnya. Mereka 
 
 3. Tekan tombol " + " untuk menambahkan templat baru. Lalu beri nama "RecyclerView Adapter" dan tambahkan kode berikut ke dalam kotak nomor 3:
 
-	#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
-	#parse("File Header.java")
-	public class ${NAME} extends
+	 #if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
+	 #parse("File Header.java")
+	 public class ${NAME} extends
         	RecyclerView.Adapter<${NAME}.ViewHolder> {
 
-    	private static final String TAG = ${NAME}.class.getSimpleName();
+    	 private static final String TAG = ${NAME}.class.getSimpleName();
 
-    	private Context context;
-    	private List<${LIST_MODEL}> list;
-    	private OnItemClickListener onItemClickListener;
+    	 private Context context;
+    	 private List<${LIST_MODEL}> list;
+    	 private OnItemClickListener onItemClickListener;
 
-    	public ${NAME}(Context context, List<${LIST_MODEL}> list,
-     	OnItemClickListener onItemClickListener) {
+    	 public ${NAME}(Context context, List<${LIST_MODEL}> list,
+     	 OnItemClickListener onItemClickListener) {
         	this.context = context;
         	this.list = list;
         	this.onItemClickListener = onItemClickListener;
-    	}
+    	 }
 
 
-    	public static class ViewHolder extends RecyclerView.ViewHolder {
-       	// Todo Butterknife bindings
+    	 public static class ViewHolder extends RecyclerView.ViewHolder {
+       	 // Todo Butterknife bindings
 
         	public ViewHolder(View itemView) {
             	super(itemView);
@@ -58,10 +58,10 @@ Berkat Live Templates, pengembangan Android lebih cepat dari sebelumnya. Mereka 
                 	}
             	});
         	}
-    	}
+    	 }
 
-    	@Override
-    	public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    	 @Override
+    	 public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         	Context context = parent.getContext();
         	LayoutInflater inflater = LayoutInflater.from(context);
 
@@ -71,28 +71,28 @@ Berkat Live Templates, pengembangan Android lebih cepat dari sebelumnya. Mereka 
         	ViewHolder viewHolder = new ViewHolder(view);
 
     	    return viewHolder;
-    	}
+    	 }
 
 
-    	@Override
-    	public void onBindViewHolder(ViewHolder holder, int position) {
+    	 @Override
+    	 public void onBindViewHolder(ViewHolder holder, int position) {
         	${LIST_MODEL} item = list.get(position);
 
         	//Todo: Setup viewholder for item 
         	holder.bind(item, onItemClickListener);
-    	}
+    	 }
 
 
-    	@Override
-    	public int getItemCount() {
-        return list.size();
-    	}
+    	 @Override
+    	 public int getItemCount() {
+         return list.size();
+    	 }
 
-    	public interface OnItemClickListener {
-        void onItemClick( int position);
-    	}
+    	 public interface OnItemClickListener {
+         void onItemClick( int position);
+    	 }
 
-	}
+	 }
 
 
 Lalu Click **OK**
