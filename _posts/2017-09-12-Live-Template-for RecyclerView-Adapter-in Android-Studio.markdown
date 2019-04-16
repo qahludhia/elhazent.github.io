@@ -1,66 +1,121 @@
 ---
 layout: post
-title: Pengertian File System Linux
-date: 2018-10-29 00:00:00 +0300
+title: Live Template Untuk Recycler View di Android Studio
+date: 2019-04-16 00:00:00 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: linux-file-systems.png # Add image post (optional)
+img: android-studio-01.png # Add image post (optional)
 tags: [Productivity, Software] # add tag
 ---
 
-## Pengertian
+Berkat Live Templates, pengembangan Android lebih cepat dari sebelumnya. Mereka membantu kita menulis kode yang tidak terlalu membosankan dan lebih fokus pada hal-hal terpenting. Mari kita buat template langsung untuk Adaptor RecyclerView.
 
-File system adalah berkas struktur logika yang digunakan untuk mengendalikan akses terhadap data yang ada pada hardisk. Dengan kata lain, file system merupakan database khusus untuk penyimpanan, pengelolaan, manipulasi dan pengambilan data, agar mudah ditemukan dan diakses.
 
-Hubungan antara system operasi dan  file system adalah file system merupakan interface yang menghubungkan system operasi dengan disk. Ketika program menginginkan pembacaan dari hardisk atau media penyimpanan lainnya, system operasi akan meminta file system untuk mencari lokasi dari file yang diinginkan. setelah file ditemukan, file system akan membuka dan membaca file tersebut, kemudian mengirimkan informasinya kepada system operasi dan akhirnya bisa dibaca oleh pengguna.
+1. Ketik cmd + shift + A(Mac), ctrl + shift + a(Windows/linux) untuk menapilkan Pencarian.
 
-## Jenis-Jenis File System
+![Macbook]({{site.baseurl}}/assets/img/template.PNG)
+ 
+2. Ketik di pencarian "add template" lalu tekan enter, maka akan muncul tampilan preference File and Code Template.
 
-### 1. Ext
+![Macbook]({{site.baseurl}}/assets/img/template-3.PNG)
 
-Ext atau Extended File System merupakan jenis file system yang di perkenalkan pada tahun 1992, Ext memiliki beberapa versi :
+3. Tekan tombol " + " untuk menambahkan templat baru. Lalu beri nama "RecyclerView Adapter" dan tambahkan kode berikut ke dalam kotak nomor 3:
 
-#### >  Ext2 (2nd Extended)
+	#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
+	#parse("File Header.java")
+	public class ${NAME} extends
+        	RecyclerView.Adapter<${NAME}.ViewHolder> {
 
-Ext2 merupakan jenis file system linux paling tua yang masih ada. file system ini pertama kali dikenalkan pada januari 1993. File system ini ditulis oleh Remy Card, Theodore T, dan Stephen Tweedie. File system ini merupakan penulisan ulang besar-besaran dari Extended file system. Ext2 adalah file system yang paling ampuh di Linux dan menjadi dasar dari segala distribusi linux.
+    	private static final String TAG = ${NAME}.class.getSimpleName();
 
-#### > Ext3 (3rd Extended)
+    	private Context context;
+    	private List<${LIST_MODEL}> list;
+    	private OnItemClickListener onItemClickListener;
 
-Ext3 adalah peningkatan dari sistem file Ext2. Peningkatan ini memiliki beberapa keuntungan, diantaranya:
-* Journaling,
-dengan menggunakan journaling, maka waktu recovery pada shutdown mendadak tidak akan selama pada Ext2. Namun ini menjadi kekurangan dari Ext3, karena dengan adanya fitur journaling, maka membutuhkan memori yang lebih dan memperlambat operasi I/O (Input/Output).
-* Integritas data,
-Ext3 menjamin adanya integritas data setelah terjadi kerusakan atau unclean shut down. Ext3 memungkinkan kita memilih jenis dan tipe proteksi dari data.
-* Kecepatan,
-daripada menulis data lebih dari sekali, Ext3 mempunyai throughput yang lebih besar daripada Ext2 karena Ext3 memaksimalkan pergerakan head hard disk. Kita bisa memilih tiga jurnal mode untuk memaksimalkan kecepatan, tetapi integritas data tidak terjamin.
-* Mudah dilakukan migrasi,
-kita dapat berpindah dari sistem file Ext2 ke sistem file Ext3 tanpa melakukan format ulang.
+    	public ${NAME}(Context context, List<${LIST_MODEL}> list,
+     	OnItemClickListener onItemClickListener) {
+        	this.context = context;
+        	this.list = list;
+        	this.onItemClickListener = onItemClickListener;
+    	}
 
-#### > Ext4 (4th Extended)
 
-Ext4 merupakan peningkatan dari sistem file Ext3. Ext4 dirilis secara lengkap dan stabil mulai dari kernel 2.6.28. Keuntungan menggunakan Ext4 adalah mempunyai pengalamatan 48-bit blok yang artinya dia akan mempunyai 1 EiB = 1.048.576 TB. Ukuran maksimum sistem file 16 TB.
+    	public static class ViewHolder extends RecyclerView.ViewHolder {
+       	// Todo Butterknife bindings
 
-### 2. JFS (Journalis File System)
+        	public ViewHolder(View itemView) {
+            	super(itemView);
+            	ButterKnife.bind(this, itemView);
 
-JFS atau dikenal juga dengan nama IBM Journal File System merupakan sistem file pertama yang menawarkan journaling. JFS sudah bertahun-tahun digunakan dalam IBM AIX® OS sebelum digunakan ke GNU/Linux. JFS saat ini menggunakan sumber daya CPU paling sedikit dibandingkan sistem file GNU/Linux lainnya. JFS sangat cepat diformat, mounting dan fsck, serta memiliki kinerja sangat baik, terutama berkaitan dengan deadline I/O scheduler. Walaupun begitu, dukungan terhadap JFS tidak seluas sistem file Ext atau Reiser FS.
+        	}
 
-### 5. Reiser FS
+        	public void bind(final ${LIST_MODEL} model,
+                         	final OnItemClickListener listener) {
+            	itemView.setOnClickListener(new View.OnClickListener() {
+                	@Override
+                	public void onClick(View v) {
+                    	listener.onItemClick(getLayoutPosition());
 
-Sistem file Reiser dibuat berdasarkan balance tree yang cepat dan unggul dalam hal kinerja, dengan algoritma yang lebih rumit. Sistem file Reiser juga memiliki jurnal yang cepat dan ciri-cirinya mirip sistem file Ext3. Sistem file Reiser lebih efisien dalam pemanfaatan ruang disk, dimana dapat menghemat disk sampai dengan 6 persen. Contohnya jika kita menulis file 100 bytes, hanya ditempatkan dalam satu blok sementara sistem file lain menempatkannya dalam 100 blok. Reiser file system tidak memiliki pengalokasian yang tetap untuk inode.
+                	}
+            	});
+        	}
+    	}
 
-### 6. XFS
+    	@Override
+    	public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        	Context context = parent.getContext();
+        	LayoutInflater inflater = LayoutInflater.from(context);
 
-XFS mempunyai throughput yang sangat cepat pada file besar, dan sangat cepat di format dan mounting akan tetapi throughput nya lambat pada file kecil.
+        	View view = inflater.inflate(R.layout.${item_layout}, parent, false);
+        	ButterKnife.bind(this, view);
 
-### 7. BTRFS (B-Tree File System)
+        	ViewHolder viewHolder = new ViewHolder(view);
 
-BTRFS merupakan file system yang berada di bawah lisensi General Public Lisence. BTRFS membuat linux dapat lebih mengatur storage yang ada dan juga dapatmelakukan administrasi dan pengelolaan tempat penyimpanan dengan interface yang lebih bersih.
+    	    return viewHolder;
+    	}
 
-### 8. ZFS (Zettabytes File System)
 
-ZFS merupakan file system terbaru yang dikembangkan oleh Sun,yang dirancang untuk menggunakan metode penyimapanan yang dikumpulkan(pooling).Dan juga telah dirancang unutk integritas data maksimum,mendukung snapshot data ,multiple penyalinan,dan checksum data.
+    	@Override
+    	public void onBindViewHolder(ViewHolder holder, int position) {
+        	${LIST_MODEL} item = list.get(position);
 
-	Referensi :
-	* https://linuxacademy.com/cp/courses/lesson/course/1748/lesson/4/module/173
-	* https://averoes12.com/file-system/
-	* https://dosen.gufron.com/artikel/mengenal-sistem-file-file-system-linux/18/
-	* http://achmad-zainuri.blogspot.com/2013/02/pengertian-file-system-dan-jenis-jenis.html
+        	//Todo: Setup viewholder for item 
+        	holder.bind(item, onItemClickListener);
+    	}
+
+
+    	@Override
+    	public int getItemCount() {
+        return list.size();
+    	}
+
+    	public interface OnItemClickListener {
+        void onItemClick( int position);
+    	}
+
+	}
+
+
+Lalu Click **OK**
+
+Itu dia! Anda baru saja menambahkan Live Template pertama Anda! Mari kita coba:
+
+1. Pergi ke Project
+2. lalu pilih package project kita
+3. click kanan pada project kita
+4. kita pilih New
+5. maka kita akan melihat class RecyclerViewAdapter , lalu kita click.
+
+![Macbook]({{site.baseurl}}/assets/img/template-4.PNG)
+
+6. setelah itu maka akan muncul pop up seperti berikut.
+
+![Macbook]({{site.baseurl}}/assets/img/template-5.PNG)
+
+
+7. Tuliskan nama adapter baru Anda ke dalam Nama file, contoh MahasiswaAdapter
+
+8. Tuliskan nama kelas Model Anda, misal Mahasiswa
+
+9. Tuliskan nama tata letak Anda, mis. mahasiswa_recycler_adapter
+
+Itu dia! Nikmati pengembangan Android menggunakan Live Template! Saya berharap dapat melihat lebih banyak templat dari pengembang Android lainnya!
